@@ -3,35 +3,36 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
-const index = () => {
+const Index = () => {
     return (
-        <div className='flex max-h-[100vh] bg-[#F8F4F0]'>
-            <div>
-                <img className='max-h-full' src={imageLogin} alt="Description of image" />
+        <div className='flex h-screen'>
+            <div className='w-1/3 bg-green-500 hidden md:block'>
+                <img className='h-full w-full object-cover' src={imageLogin} alt="Description of image" />
             </div>
-            <div className='w-full flex justify-center items-center'>
-                <div className='bg-white w-[50%] h-[60%] rounded-lg shadow-lg p-8 flex flex-col gap-8'>
-                    <h1 className='text-2xl font-bold'>Login</h1>
-                    <div className='flex flex-col gap-6'>
+
+            <div className='w-2/3 flex justify-center items-center'>
+                <div className='bg-white p-8 rounded-lg shadow-lg w-96'>
+                    <h1 className='text-2xl font-bold mb-4'>Login</h1>
+                    <form className='space-y-4'>
                         <div>
-                            <Label className='pb-2' htmlFor="email">Email</Label>
-                            <Input type='email' placeholder="Email" />
+                            <Label htmlFor="email">Email</Label>
+                            <Input id="email" type="email" placeholder="Digite seu email" />
                         </div>
                         <div>
-                            <Label className='pb-2' htmlFor="password">Password</Label>
-                            <Input type="password" placeholder="Password" />
+                            <Label htmlFor="password">Senha</Label>
+                            <Input id="password" type="password" placeholder="Digite sua senha" />
                         </div>
-                        <Button className='bg-black text-white mt-4' variant="outline">Login</Button>
-                        <div className='flex flex-col items-center'>
+                        <Button type="submit" className='w-full'>Entrar</Button>
+                        <div className='text-center mt-4'>
                             <p>Need to create an account?
                                 <a href="/signup" className='text-blue-500'> Sign Up</a>
                             </p>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     )
 }
 
-export default index
+export default Index
